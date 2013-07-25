@@ -1,0 +1,28 @@
+{
+  "name": "bootstrap-javascript",
+  "version": "2.3.1",
+  "main": "./bootstrap.js",
+  "dependencies": {
+    "jquery": "~1.8.3"
+  },
+  "readme": "ERROR: No README.md file found!",
+  "description": "ERROR: No README.md file found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jackncoke/bootstrap-javascript.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "homepage": "https://github.com/jackncoke/bootstrap-javascript",
+  "_release": "2.3.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.3.1",
+    "commit": "0e54c4c0e2461038dfc6e524b1a7b2ccf0695595"
+  },
+  "_source": "git://github.com/jackncoke/bootstrap-javascript.git",
+  "_target": "~2.3.1"
+}
