@@ -21,7 +21,7 @@ block content
       div.row.todo.not-done(ng-repeat="todo in todos | filter:notDoneFilter")
         div.span9
           label.checkbox
-            input(type="checkbox", ng-model="todo.done")
+            input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
             | {{todo.description}}
         div.span3.text-right
           i {{todo.due | date:'MMM d, yyyy'}}
@@ -30,7 +30,7 @@ block content
       div.row.todo.done(ng-repeat="todo in todos | filter:doneFilter")
         div.span9
           label.checkbox
-            input(type="checkbox", ng-model="todo.done")
+            input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
             del {{todo.description}}
         div.span3.text-right
           i {{todo.due | date:'MMM d, yyyy'}}
