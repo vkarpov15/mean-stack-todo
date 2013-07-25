@@ -9,18 +9,20 @@ block content
   div.container(ng-controller="TodoListController", ng-init="setTodos( #{JSON.stringify(todos)} )")
     h1 My Todo List
     h2 Upcoming
-    div.row(ng-repeat="todo in todos | filter:notDoneFilter")
-      div.span9
-        label.checkbox
-          input(type="checkbox", ng-model="todo.done")
-          | {{todo.description}}
-      div.span3.text-right
-        i {{todo.due | date:'MMM d, yyyy'}}
+    div
+      div.row.todo.not-done(ng-repeat="todo in todos | filter:notDoneFilter")
+        div.span9
+          label.checkbox
+            input(type="checkbox", ng-model="todo.done")
+            | {{todo.description}}
+        div.span3.text-right
+          i {{todo.due | date:'MMM d, yyyy'}}
     h2 Done
-    div.row(ng-repeat="todo in todos | filter:doneFilter")
-      div.span9
-        label.checkbox
-          input(type="checkbox", ng-model="todo.done")
-          del {{todo.description}}
-      div.span3.text-right
-        i {{todo.due | date:'MMM d, yyyy'}}
+    div
+      div.row.todo.done(ng-repeat="todo in todos | filter:doneFilter")
+        div.span9
+          label.checkbox
+            input(type="checkbox", ng-model="todo.done")
+            del {{todo.description}}
+        div.span3.text-right
+          i {{todo.due | date:'MMM d, yyyy'}}
