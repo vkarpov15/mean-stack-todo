@@ -8,6 +8,12 @@ block head
 block content
   div.container(ng-controller="TodoListController", ng-init="setTodos( #{JSON.stringify(todos)} )")
     h1 My Todo List
+    h2 Add New
+    form(novalidate, ng-submit="addNewTodo()")
+      textarea( ng-model="newTodo.description",
+                placeholder="Description")
+      br
+      button.btn.btn-primary(type="submit") Add Todo
     h2 Upcoming
     div
       div.row.todo.not-done(ng-repeat="todo in todos | filter:notDoneFilter")
