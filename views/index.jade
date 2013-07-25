@@ -13,6 +13,8 @@ block content
       textarea( ng-model="newTodo.description",
                 placeholder="Description")
       br
+      datepicker(ng-model="newTodo.due")
+      br
       button.btn.btn-primary(type="submit") Add Todo
     h2 Upcoming
     div
