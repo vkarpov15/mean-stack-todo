@@ -1,4 +1,4 @@
-function TodoListController($scope, $http, $timeout) {
+function TodoListController($scope, $http) {
   $scope.todos = [];
   $scope.newTodo = {
     done : false,
@@ -26,13 +26,15 @@ function TodoListController($scope, $http, $timeout) {
       $scope.todos = data.todos;
     });
 
-    $timeout(function() {
+    setInterval(function() {
       $scope.updateList();
+      $scope.$apply();
     }, 30 * 60 * 1000); // update every 30 minutes;
   };
 
-  $timeout(function() {
+  setInterval(function() {
     $scope.updateList();
+    $scope.$apply();
   }, 30 * 60 * 1000); // update every 30 minutes;
 
   $scope.updateList();
