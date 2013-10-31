@@ -25,11 +25,6 @@ function TodoListController($scope, $http) {
     $http.get('/todos.json').success(function(data) {
       $scope.todos = data.todos;
     });
-
-    setInterval(function() {
-      $scope.updateList();
-      $scope.$apply();
-    }, 30 * 60 * 1000); // update every 30 minutes;
   };
 
   setInterval(function() {
