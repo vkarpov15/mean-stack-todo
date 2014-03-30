@@ -1,36 +1,5 @@
 extends layout
 
-block head
-  link(rel='stylesheet', href='/javascripts/vendor/bootstrap-css/css/bootstrap.css')
-
-  script(type='text/javascript', src='/javascripts/controllers/TodoListController.js')
-
 block content
-  div.container(ng-controller="TodoListController", ng-init="setTodos( #{JSON.stringify(todos)} )")
-    h1 My Todo List
-    h2 Add New
-    form(novalidate, ng-submit="addNewTodo()")
-      textarea( ng-model="newTodo.description",
-                placeholder="Description")
-      br
-      datepicker(ng-model="newTodo.due")
-      br
-      button.btn.btn-primary(type="submit") Add Todo
-    h2 Upcoming
-    div
-      div.row.todo.not-done(ng-repeat="todo in todos | filter:notDoneFilter")
-        div.span9
-          label.checkbox
-            input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
-            | {{todo.description}}
-        div.span3.text-right
-          i {{todo.due | date:'MMM d, yyyy'}}
-    h2 Done
-    div
-      div.row.todo.done(ng-repeat="todo in todos | filter:doneFilter")
-        div.span9
-          label.checkbox
-            input(type="checkbox", ng-model="todo.done", ng-change="update(todo)")
-            del {{todo.description}}
-        div.span3.text-right
-          i {{todo.due | date:'MMM d, yyyy'}}
+  h1= title
+  p Welcome to #{title}
